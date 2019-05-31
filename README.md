@@ -31,7 +31,7 @@ In addition to the `migrations` and `seeding` scripts, write a data access file 
 
 Organize and name your files anyway you see fit.
 
-## Stretch Problems
+## Stretch Problems 
 
 - design and build a RESTful API that makes use of your data access file and publishes endpoints that a client application can use to manage all resources.
 - add a method called `getRecipe(id)` to your data access library that should return the recipe with the provided `id`. The recipe should include:
