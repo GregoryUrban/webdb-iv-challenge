@@ -13,6 +13,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "start": "nodemon",
     "server": "nodemon index.js"
   },
   "repository": "https://github.com/GregoryUrban/webdb-iv-challenge.git",

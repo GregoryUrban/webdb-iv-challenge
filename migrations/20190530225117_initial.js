@@ -26,6 +26,20 @@ exports.up = async function(knex) {
     //   tbl.string('ingredients_unit').references('unit').inTable('ingredients').onDelete('CASCADE').onUpdate('CASCADE').notNullable()
     //   tbl.integer('unit_amount').notNullable()
     })
+
+    await knex.schema.createTable('dish_recipe_ingredients', (tbl) => {
+      tbl.increments('id').unique()
+      tbl.integer('dish_id').references('id').inTable('recipe').onDelete('CASCADE').onUpdate('CASCADE').notNullable()
+      // tbl.string('dish_name').references('id').inTable('recipe').onDelete('CASCADE').onUpdate('CASCADE').notNullable()
+
+      tbl.integer('recipe_id').references('id').inTable('recipe').onDelete('CASCADE').onUpdate('CASCADE').notNullable()
+      tbl.integer('ingredients_id').references('id').inTable('ingredients').onDelete('CASCADE').onUpdate('CASCADE').notNullable()
+      tbl.float('quantity').notNullable()
+    //   tbl.string('ingredients_unit').references('unit').inTable('ingredients').onDelete('CASCADE').onUpdate('CASCADE').notNullable()
+    //   tbl.string('ingredients_unit').references('unit').inTable('ingredients').onDelete('CASCADE').onUpdate('CASCADE').notNullable()
+    //   tbl.integer('unit_amount').notNullable()
+    })
+
   };
   
   exports.down = async function(knex) {
