@@ -12,26 +12,29 @@
 Design the **data model** for a _recipe book_ application, then use `Knex migrations and seeding` functionality to build a `SQLite3` database based on the model and seed it with test data.
 
 The requirements for the system, as stated by the client are:
+-- Dish is 1 - many. 
+-- Recipe is 1 to many
+-- Ingredient is many to many
 
-- have a way to manage dishes. A **dish** is something the client wants to cook, like _pizza_ or _tacos_.
-- have a way to manage recipes. A **dish** can have different recipes for tacos, like _tex-mex_ or _granny's_. A **recipe** belongs only to one **dish**.
-- have a way to manage ingredients.
-- a **recipe** could have more than one **ingredient** and the same **ingredient** can be used in multiple recipes. Examples are _"cup of corn flour"_ or _"gram of butter"_.
-- when saving the ingredients for a **recipe** capture the quantity required for that **ingredient** as a floating number.
-- have a way to save instructions for cooking a recipe.
-- have a way to pick a **dish** and a **recipe** and get a _shopping list_ with all the ingredients, and quantity of each, needed to cook the **dish**.
+- [x] have a way to manage dishes. A **dish** is something the client wants to cook, like _pizza_ or _tacos_.
+- [x] have a way to manage recipes. A **dish** can have different recipes for tacos, like _tex-mex_ or _granny's_. A **recipe** belongs only to one **dish**.
+- [x] have a way to manage ingredients.
+- [x] a **recipe** could have more than one **ingredient** and the same **ingredient** can be used in multiple recipes. Examples are _"cup of corn flour"_ or _"gram of butter"_.
+- [x] when saving the ingredients for a **recipe** capture the quantity required for that **ingredient** as a floating number.
+- [x] have a way to save instructions for cooking a recipe. - FROM GREG - Im assuming this is the helper functions addDish/ addRecipe?
+- [x] have a way to pick a **dish** and a **recipe** and get a _shopping list_ with all the ingredients, and quantity of each, needed to cook the **dish**.
 
 In addition to the `migrations` and `seeding` scripts, write a data access file that **exports** an object with the following functions:
 
-- `getDishes()`: should return a list of all dishes in the database.
-- `addDish(dish)`: should add the **dish** to the database and return the `id` of the new **dish**.
-- `getDish(id)`: should return the **dish** with the provided `id` and include a list of the related recipes.
-- `getRecipes()`: should return a list of all recipes in the database including the **dish** they belong to.
-- `addRecipe(recipe)`: should add a **recipe** to the database and return the `id` of the new **recipe**.
+- [x] `getDishes()`: should return a list of all dishes in the database.
+- [x] `addDish(dish)`: should add the **dish** to the database and return the `id` of the new **dish**.
+- [x] `getDish(id)`: should return the **dish** with the provided `id` and include a list of the related recipes.
+- [x] `getRecipes()`: should return a list of all recipes in the database including the **dish** they belong to.
+- [x] `addRecipe(recipe)`: should add a **recipe** to the database and return the `id` of the new **recipe**.
 
 Organize and name your files anyway you see fit.
 
-## Stretch Problems
+## Stretch Problems 
 
 - design and build a RESTful API that makes use of your data access file and publishes endpoints that a client application can use to manage all resources.
 - add a method called `getRecipe(id)` to your data access library that should return the recipe with the provided `id`. The recipe should include:
